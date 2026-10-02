@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Movie Cells: aplicación de películas construida con Open Cells y Material Web."
+    />
+    <meta name="theme-color" content="#6750a4" />
+    <title>Movie Cells</title>
+    <link rel="icon" href="images/favicon.svg" />
+    <!--
+      Global stylesheet. Loaded here because Open Cells pages render in the light DOM, so this is
+      the only place page content can be styled from (see `src/css/main.css`).
+    -->
+    <link rel="stylesheet" href="/src/css/main.css" />
+  </head>
+  <body>
+    <!-- Open Cells router outlet: `startApp({ mainNode: 'app-content' })` injects pages here. -->
+    <app-index id="app-content"></app-index>
+
+    <noscript>Necesitas activar JavaScript para usar Movie Cells.</noscript>
+
+    <script type="module" src="src/components/app-index.ts"></script>
+  </body>
+</html>

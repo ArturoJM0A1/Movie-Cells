@@ -1,0 +1,113 @@
+/*
+ * Styles of the movie detail page.
+ * Light DOM page (Open Cells) styled by this global stylesheet.
+ */
+
+.movie-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding-bottom: 2rem;
+}
+
+.movie-poster {
+  position: relative;
+  width: 100%;
+  max-width: 22rem;
+  aspect-ratio: 2 / 3;
+  overflow: hidden;
+  border-radius: var(--border-radius-img);
+  background-color: var(--surface-container-highest);
+}
+
+.movie-poster img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.poster-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--on-surface-variant);
+}
+
+.movie-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.movie-meta {
+  color: var(--on-surface-variant);
+}
+
+.movie-facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+}
+
+.movie-fact {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 0.875rem;
+  color: var(--on-surface-variant);
+}
+
+.movie-fact md-icon {
+  color: var(--primary);
+}
+
+.movie-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.movie-summary p {
+  max-width: 46rem;
+  color: var(--on-surface-variant);
+}
+
+.movie-cast {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.movie-cast md-list {
+  border-radius: var(--border-radius-container);
+  background-color: var(--surface-container);
+  overflow: hidden;
+}
+
+/* Material Web does not size slotted images, so the portrait size is handled here. */
+.movie-cast img {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* 900px */
+@media (min-width: 56.25rem) {
+  .movie-detail {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .movie-poster {
+    position: sticky;
+    top: 0;
+    flex-shrink: 0;
+  }
+}

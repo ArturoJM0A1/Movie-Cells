@@ -1,0 +1,97 @@
+/**
+ * Bridging our design tokens (colors.css) with the Material Web components.
+ *
+ * `@material/web` resolves its own `--md-sys-color-*` tokens first, so instead of restyling each
+ * component one by one we map our palette onto the system tokens. Because custom properties are
+ * inherited, this works for the components living in the shadow root of `<app-index>`, in the
+ * shadow root of our own Web Components and in the light DOM of the pages, all at once.
+ *
+ * Only the tokens the app really uses are declared; everything else keeps the Material default.
+ */
+:root {
+  /* system colors */
+  --md-sys-color-primary: var(--primary);
+  --md-sys-color-on-primary: var(--on-primary);
+  --md-sys-color-primary-container: var(--primary-container);
+  --md-sys-color-on-primary-container: var(--on-primary-container);
+  --md-sys-color-secondary-container: var(--secondary-container);
+  --md-sys-color-on-secondary-container: var(--on-secondary-container);
+  --md-sys-color-tertiary: var(--tertiary);
+  --md-sys-color-tertiary-container: var(--tertiary-container);
+  --md-sys-color-surface: var(--surface);
+  --md-sys-color-on-surface: var(--on-surface);
+  --md-sys-color-on-surface-variant: var(--on-surface-variant);
+  --md-sys-color-surface-container-low: var(--surface-container-low);
+  --md-sys-color-surface-container-highest: var(--surface-container-highest);
+  --md-sys-color-outline: var(--outline);
+  --md-sys-color-outline-variant: var(--outline-variant);
+  --md-sys-color-error: var(--error);
+  --md-sys-color-inverse-surface: var(--inverse-surface);
+  --md-sys-color-inverse-on-surface: var(--inverse-on-surface);
+  --md-sys-color-shadow: #000000;
+
+  /* filled button (search action) */
+  --md-filled-button-container-color: var(--primary);
+  --md-filled-button-label-text-color: var(--on-primary);
+  --md-filled-button-icon-color: var(--on-primary);
+  --md-filled-button-hover-label-text-color: var(--on-primary);
+  --md-filled-button-hover-icon-color: var(--on-primary);
+  --md-filled-button-pressed-label-text-color: var(--on-primary);
+  --md-filled-button-pressed-icon-color: var(--on-primary);
+  --md-filled-button-hover-state-layer-color: var(--on-primary);
+  --md-filled-button-pressed-state-layer-color: var(--on-primary);
+
+  /* filled tonal button (card action) */
+  --md-filled-tonal-button-container-color: var(--secondary-container);
+  --md-filled-tonal-button-label-text-color: var(--on-secondary-container);
+  --md-filled-tonal-button-icon-color: var(--on-secondary-container);
+
+  /* outlined text field (search input) */
+  --md-outlined-text-field-outline-color: var(--outline);
+  --md-outlined-text-field-hover-outline-color: var(--on-surface);
+  --md-outlined-text-field-focus-outline-color: var(--primary);
+  --md-outlined-text-field-label-text-color: var(--on-surface-variant);
+  --md-outlined-text-field-hover-label-text-color: var(--on-surface);
+  --md-outlined-text-field-focus-label-text-color: var(--primary);
+  --md-outlined-text-field-input-text-color: var(--on-surface);
+  --md-outlined-text-field-input-text-placeholder-color: var(--on-surface-variant);
+  --md-outlined-text-field-caret-color: var(--primary);
+  --md-outlined-text-field-leading-icon-color: var(--on-surface-variant);
+  --md-outlined-text-field-focus-leading-icon-color: var(--on-surface-variant);
+  --md-outlined-text-field-supporting-text-color: var(--on-surface-variant);
+  --md-outlined-text-field-focus-outline-width: 2px;
+
+  /* assist chip (genres) */
+  --md-assist-chip-label-text-color: var(--on-secondary-container);
+  --md-assist-chip-outline-color: var(--outline);
+
+  /* circular progress (loading) */
+  --md-circular-progress-active-indicator-color: var(--primary);
+  --md-circular-progress-track-color: var(--surface-container-highest);
+
+  /* divider */
+  --md-divider-color: var(--outline-variant);
+
+  /* list / list item (cast) */
+  --md-list-container-color: transparent;
+  --md-list-item-label-text-color: var(--on-surface);
+  --md-list-item-supporting-text-color: var(--on-surface-variant);
+  --md-list-item-leading-icon-color: var(--primary);
+  --md-list-item-trailing-icon-color: var(--on-surface-variant);
+  --md-list-item-hover-state-layer-color: var(--surface-container-highest);
+
+  /* outlined icon button (theme toggle, pager) */
+  --md-outlined-icon-button-icon-color: var(--primary);
+  --md-outlined-icon-button-outline-color: var(--outline);
+  --md-outlined-icon-button-hover-state-layer-color: var(--surface-container-highest);
+  --md-outlined-icon-button-pressed-state-layer-color: var(--surface-container-high);
+  --md-outlined-icon-button-selected-container-color: var(--surface-container-highest);
+  --md-outlined-icon-button-selected-icon-color: var(--on-surface);
+}
+
+/* Keeps the circular toggle visually round in both themes. */
+md-outlined-icon-button[selected] {
+  border: 1px solid var(--outline);
+  border-radius: 100%;
+  box-sizing: border-box;
+}

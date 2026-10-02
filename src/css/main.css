@@ -1,0 +1,169 @@
+/*
+ * Global stylesheet of Movie Cells.
+ *
+ * `src/css/colors.css` holds the design tokens (including the dark theme) and is imported first so
+ * every other rule can rely on `var(--primary)`, `var(--surface)`, ...
+ *
+ * IMPORTANT (Open Cells): pages render with `createRenderRoot() { return this }`, i.e. their markup
+ * lives in the light DOM, so this is the only stylesheet that styles page content. The shell
+ * (`<app-index>`) and the reusable Web Components own their shadow-root styles instead.
+ */
+@import url('./colors.css');
+@import url('./fonts.css');
+@import url('./material.css');
+@import url('./home.css');
+@import url('./search.css');
+@import url('./movie.css');
+
+html,
+body {
+  --border-radius-container: 0.75rem;
+  --border-radius-img: 0.5rem;
+
+  height: 100%;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: var(--surface);
+  font-family: 'Roboto Serif', sans-serif;
+  font-weight: 300;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: var(--on-surface);
+  /* Material Symbols is used for the icons (see fonts.css). */
+  font-variation-settings: normal;
+}
+
+noscript {
+  display: block;
+  margin: 1em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+h1 {
+  font-size: 2.25rem;
+  line-height: 2.75rem;
+  font-weight: 400;
+}
+
+h2 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 400;
+}
+
+h3 {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: 400;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary);
+}
+
+a:hover,
+a:focus {
+  color: var(--on-surface);
+}
+
+img {
+  max-width: 100%;
+}
+
+/* Activates the filled axis of the Material Symbols icons declared per component. */
+md-icon[filled] {
+  font-variation-settings: 'FILL' 1;
+}
+
+/* Shared page header ---------------------------------------------------------- */
+
+.page-header {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.page-header p {
+  color: var(--on-surface-variant);
+}
+
+.page-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Shared results grid --------------------------------------------------------- */
+
+.not-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 4rem 1rem;
+  text-align: center;
+  color: var(--on-surface);
+}
+
+.not-found md-icon {
+  font-size: 3rem;
+  color: var(--primary);
+}
+
+.not-found p {
+  max-width: 30rem;
+  color: var(--on-surface-variant);
+}
+
+.movie-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+/* 600px */
+@media (min-width: 37.5rem) {
+  .movie-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* 900px */
+@media (min-width: 56.25rem) {
+  .movie-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* 1280px */
+@media (min-width: 80rem) {
+  .movie-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

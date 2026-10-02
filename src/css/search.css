@@ -1,0 +1,25 @@
+/*
+ * Styles of the search results page.
+ * Light DOM page (Open Cells) styled by this global stylesheet.
+ */
+
+.search-page {
+  padding-bottom: 2rem;
+}
+
+/* The search bar and the grid share the same vertical rhythm. */
+.search-page movie-search-bar {
+  margin-bottom: 2rem;
+}
+
+.search-page .page-header p {
+  font-size: 0.875rem;
+}
+
+.search-page status-view {
+  margin-bottom: 2rem;
+}
+
+.search-page movie-pagination {
+  margin-top: 1rem;
+}
